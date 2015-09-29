@@ -40,3 +40,5 @@ Thermostat.prototype.energyUsage = function() {
   if (this.temperature < 25) return("Yellow");
   return ("Red");
 };
+
+thermostat = new Thermostat();

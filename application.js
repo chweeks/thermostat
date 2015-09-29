@@ -1,13 +1,13 @@
 $( document ).ready (function() {
   $( "#increase" ).click(function( event ) {
 
-        alert( "Clicked Increase!" );
+    thermostat.increaseTemp();
 
     });
 
   $( "#decrease" ).click(function( event ) {
 
-        alert( "Clicked Decrease!" );
+        thermostat.decreaseTemp();
 
     });
 
