@@ -43,4 +43,19 @@ describe('Thermostat', function() {
     expect(thermostat.isPowerSaving).toBe(true)
   });
 
+  it('has max temp of 25 in powersaving mode', function() {
+    expect(thermostat.maximum).toBe(25)
+  })
+  it('has max temp of 32 when powersaving mode is off', function() {
+    thermostat.powerSavingOff()
+    expect(thermostat.maximum).toBe(32)
+  })
+  it('cannot exceed max temp in powersaving', function() {
+    thermostat.temperature = 25;
+    expect(function(){thermostat.increaseTemp()}).toThrow('Cannot exceed the max temp')
+  })
+  it('cannot exceed max temp when powersaving is off', function() {
+    thermostat.temperature = 32;
+    expect(function(){thermostat.increaseTemp()}).toThrow('Cannot exceed the max temp')
+  })
 });
