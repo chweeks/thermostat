@@ -1,4 +1,5 @@
 $( document ).ready (function() {
+
   $( "#increase" ).click(function( event ) {
 
     thermostat.increaseTemp();
@@ -16,14 +17,16 @@ $( document ).ready (function() {
         alert( "Clicked Reset!" );
 
     });
-    $( "#powersaveon" ).click(function( event ) {
 
-              alert( "Clicked PowerSave On!" );
+  $( "#powersaveon" ).click(function( event ) {
 
-          });
-    $( "#powersaveoff" ).click(function( event ) {
+            alert( "Clicked PowerSave On!" );
 
-          alert( "Clicke PowerSave Off!" );
+        });
 
-      });
+  $( "#powersaveoff" ).click(function( event ) {
+
+        alert( "Clicke PowerSave Off!" );
+
+    });
 });
