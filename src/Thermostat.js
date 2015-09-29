@@ -1,5 +1,6 @@
 function Thermostat() {
   this.temperature = 20;
+  this.minimum = 10;
 };
 
 Thermostat.prototype.increase_temp = function() {
@@ -7,5 +8,9 @@ Thermostat.prototype.increase_temp = function() {
 };
 
 Thermostat.prototype.decrease_temp = function() {
-  this.temperature --
+  if (this.temperature > this.minimum) {
+    this.temperature --
+  } else {
+    throw 'Cannot go below the minimum';
+  }
 };
