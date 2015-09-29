@@ -30,3 +30,13 @@ Thermostat.prototype.powerSavingOn = function() {
   this.maximum = 25;
   this.isPowerSaving = true;
 };
+
+Thermostat.prototype.reset = function() {
+  this.temperature = 20
+};
+
+Thermostat.prototype.energyUsage = function() {
+  if (this.temperature < 18) return("Green");
+  if (this.temperature < 25) return("Yellow");
+  return ("Red");
+};

@@ -46,16 +46,34 @@ describe('Thermostat', function() {
   it('has max temp of 25 in powersaving mode', function() {
     expect(thermostat.maximum).toBe(25)
   })
+
   it('has max temp of 32 when powersaving mode is off', function() {
     thermostat.powerSavingOff()
     expect(thermostat.maximum).toBe(32)
   })
+
   it('cannot exceed max temp in powersaving', function() {
     thermostat.temperature = 25;
     expect(function(){thermostat.increaseTemp()}).toThrow('Cannot exceed the max temp')
   })
+
   it('cannot exceed max temp when powersaving is off', function() {
     thermostat.temperature = 32;
     expect(function(){thermostat.increaseTemp()}).toThrow('Cannot exceed the max temp')
   })
+
+  it('temperature can reset to 20', function() {
+    thermostat.temperature = 30
+    thermostat.reset()
+    expect(thermostat.temperature).toBe(20)
+  });
+
+  it('returns energy usage colour', function(){
+    thermostat.temperature = 16
+    expect(thermostat.energyUsage()).toBe("Green")
+    thermostat.temperature = 20
+    expect(thermostat.energyUsage()).toBe("Yellow")
+    thermostat.temperature = 25
+    expect(thermostat.energyUsage()).toBe("Red")
+  });
 });
