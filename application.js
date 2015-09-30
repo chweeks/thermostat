@@ -1,32 +1,33 @@
 $( document ).ready (function() {
 
+  $( "#temp" ).text(thermostat.temperature);
+
   $( "#increase" ).click(function( event ) {
 
     thermostat.increaseTemp();
+    $( "#temp" ).text(thermostat.temperature);
 
     });
 
   $( "#decrease" ).click(function( event ) {
 
-        thermostat.decreaseTemp();
+    thermostat.decreaseTemp();
+    $( "#temp" ).text(thermostat.temperature);
 
     });
 
   $( "#reset" ).click(function( event ) {
 
-        alert( "Clicked Reset!" );
+    thermostat.reset();
+    $( "#temp" ).text(thermostat.temperature);
 
     });
 
-  $( "#powersaveon" ).click(function( event ) {
+  $( "#powersave" ).click(function( event ) {
 
-            alert( "Clicked PowerSave On!" );
-
-        });
-
-  $( "#powersaveoff" ).click(function( event ) {
-
-        alert( "Clicke PowerSave Off!" );
+    $( "#powersave" )[0].checked ? thermostat.powerSavingOn() : thermostat.powerSavingOff();
+    $( "#temp" ).text(thermostat.temperature);
 
     });
+
 });
