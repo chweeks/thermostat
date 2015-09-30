@@ -8,33 +8,37 @@
   <script src="jquery-2.1.4.js"></script>
   <script src="application.js"></script>
   <script src="src/thermostat.js"></script>
-
+  <link rel="stylesheet" href="public/css/bootstrap.css"/>
   <!-- include spec files here... -->
 </head>
-<body>
-  <h1>Thermostat</h1>
-  <div>
-    <span id='temp'>xx</span>&deg;C
-  </div>
-  <div>
-    <button id="increase" type="submit" >
-    Increase
-  </button>
-  </div>
-  <div>
-    <button id="decrease" type="submit">
-    Decrease
-    </button>
-  </div>
-  <div>
-    <button id="reset" type="submit">
-    Reset
-    </button>
-  </div>
-  <div>
-    <input type="checkbox" id="powersave" checked>
-    <label for="powersave">&nbsp;Power Save</label>
-  </div>
+  <body class="col-md-12a text-center">
 
-</body>
+    <h1 class = 'jumbotron'>thermostat</h1>
+    <div style="background-color: rgb(167,197,189)">
+      <div id="usage">
+        <p style = 'font-size: 200px' >
+          <span id='temp'>xx</span>&deg;C
+        </p>
+      </div>
+      <div>
+        <button id="increase" type="button" class='btn btn-primary'>
+          <span class ="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>  Increase
+        </button>
+      <button id="decrease" type="button" class='btn btn-primary'>
+      Decrease  <span class ="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+      </button>
+      </div>
+      <br>
+      <div>
+        <button id="reset" type="button" class='btn btn-success'>
+        Reset  <span class ="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+        </button>
+      </div>
+      <br>
+      <div>
+        <input type="checkbox" id="powersave" checked>
+        <label for="powersave">&nbsp;Power Save</label>
+      </div>
+  </div>
+  </body>
 </html>

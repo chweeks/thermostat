@@ -37,9 +37,9 @@ Thermostat.prototype.reset = function() {
 };
 
 Thermostat.prototype.energyUsage = function() {
-  if (this.temperature < 18) return("Green");
-  if (this.temperature < 25) return("Yellow");
-  return ("Red");
+  if (this.temperature < 18) return("green");
+  if (this.temperature < 25) return("yellow");
+  return ("red");
 };
 
 thermostat = new Thermostat();
