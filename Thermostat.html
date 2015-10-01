@@ -12,33 +12,38 @@
   <!-- include spec files here... -->
 </head>
   <body class="col-md-12a text-center">
-
-    <h1 class = 'jumbotron'>thermostat</h1>
-    <div style="background-color: rgb(167,197,189)">
-      <div id="usage">
-        <p style = 'font-size: 200px' >
-          <span id='temp'>xx</span>&deg;C
-        </p>
-      </div>
-      <div>
-        <button id="increase" type="button" class='btn btn-primary'>
-          <span class ="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>  Increase
-        </button>
-      <button id="decrease" type="button" class='btn btn-primary'>
-      Decrease  <span class ="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+    <div id="usage">
+      <p style = 'font-size: 200px' >
+        <span id='temp'>xx</span>&deg;C
+      </p>
+    </div>
+    <div>
+      <button id="increase" type="button" class='btn btn-primary'>
+        <span class ="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>  Increase
       </button>
-      </div>
-      <br>
-      <div>
-        <button id="reset" type="button" class='btn btn-success'>
-        Reset  <span class ="glyphicon glyphicon-repeat" aria-hidden="true"></span>
-        </button>
-      </div>
-      <br>
-      <div>
-        <input type="checkbox" id="powersave" checked>
-        <label for="powersave">&nbsp;Power Save</label>
-      </div>
-  </div>
+    <button id="decrease" type="button" class='btn btn-primary'>
+    Decrease  <span class ="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+    </button>
+    </div>
+    <br>
+    <div>
+      <button id="reset" type="button" class='btn btn-success'>
+      Reset  <span class ="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+      </button>
+    </div>
+    <br>
+    <div>
+      <input type="checkbox" id="powersave" checked>
+      <label for="powersave">&nbsp;Power Save</label>
+    <br>
+    <br>
+    <br>
+    </div>
+    <div>
+      <p id="weather_city"><strong>City:</strong> London </p>
+      <p id="weather_description"></p>
+      <p>Temperature: <span id="weather_temp"></span>&deg;C</p>
+      <p>Wind speed: <span id="weather_wind"></span> MPH</p>
+    </div>
   </body>
 </html>
