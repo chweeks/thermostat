@@ -2,30 +2,25 @@ $( document ).ready (function() {
 
   var update = function(){
     $( "#temp" ).text(thermostat.temperature);
-    $( "#weather" ).text(thermostat.weather);
-    $( "#usage").attr('style','color:'+ thermostat.energyUsage());
+    $( "#usage" ).attr('style','color:'+ thermostat.energyUsage());
+    $( "#weather_temp" ).text(weathertemp);
+    $( "#weather_name" ).text(weathername)
   }
-  $('#weather_city').val('London')
-  weatherForm();
+
+  var pathArray = window.location.search;
+    var urlCity = pathArray.replace('?city=', '').replace('&Submit=Submit', '');
+    var weathertemp;
+    var weathername;
+    $.ajax('http://api.openweathermap.org/data/2.5/weather?q=' + urlCity, {
+      success: function(data) {
+        weathertemp = Math.round(data.main.temp - 273.15);
+        weathername = data.name;
+        update();
+      }
+  });
+
   update();
 
-  function weatherForm() {
-    $.ajax({
-      url: 'http://api.openweathermap.org/data/2.5/weather',
-      jsonp: 'callback',
-      dataType: 'jsonp',
-      cache: false,
-      data: {
-        q: $('#weather_city').val(),
-      },
-      // work with the response
-      success: function (response) {
-        $('#weather_description').text(response.weather[0].description);
-        $('#weather_temp').text(Math.round(((response.main.temp)-272)));
-        $('#weather_wind').text(response.wind.speed);
-      },
-    });
-  }
   $( "#increase" ).click(function( event ) {
 
     thermostat.increaseTemp();
